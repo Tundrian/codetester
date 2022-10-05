@@ -9,7 +9,7 @@ function Challenge2() {
   }
 
   const decode = (msg: string) => {
-    return msg.slice(msg.indexOf('c')+1).replace(/Eek!/g, '').split('').reverse().join('').split('v')
+    return msg.slice(msg.indexOf('c')+1).replace(/Eek!/g, '').split('').reverse().join('').split('v').map(x => x[0]).join('').slice(1)
   }
 
 
@@ -22,10 +22,8 @@ function Challenge2() {
           <input name="strInput"  id="strInput" className="border border-slate-600 w-3/4 h-10 mb-5 text-center" type="text" value={input} onChange={handleChange} />
         </div>
       </form>
-      {decode(input) && decode(input).map(x => (
-        <p className="w-full h-10 bg-green-700 text-white text-center py-2"><span className="font-bold text-gray-200 text-lg">Output: </span>{x}</p>
-      ))}
-      {/* <p className="w-full h-10 bg-green-700 text-white text-center py-2"><span className="font-bold text-gray-200 text-lg">Output: </span>{decode(input)}</p> */}
+      <h2 className="text-center text-3xl text-slate-700 my-5 w-full">Output</h2>
+      <p className="w-full h-10 bg-green-700 text-white text-center py-2">{decode(input)}</p>
     </section>
   )
 }
