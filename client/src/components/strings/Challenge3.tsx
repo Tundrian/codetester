@@ -23,7 +23,7 @@ function Challenge3() {
         </div>
       </form>
       <h2 className="text-center text-3xl text-slate-700 my-5 w-full">Output</h2>
-      <p className="w-full h-10 bg-green-700 text-white text-center py-2">{decode(input)}</p>
+      <p className="w-full h-10 bg-green-700 text-white text-center py-2">test</p>
     </section>
   )
 }
