@@ -13,7 +13,7 @@ function App() {
   return (
     <>
     <Navbar activePage={activeChallenge} setActivePage={setActiveChallenge}/>
-    {!activeChallenge && <Hero />}
+    {!activeChallenge && <Hero setActivePage={setActiveChallenge} />}
     {activeChallenge === 'Challenge1' && <Challenge1 />}
     {activeChallenge === 'Challenge2' && <Challenge2 />}
     {activeChallenge === 'Challenge3' && <Challenge3 />}

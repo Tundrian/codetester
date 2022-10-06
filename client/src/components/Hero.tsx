@@ -1,4 +1,8 @@
-function Hero() {
+type appProps = {
+  setActivePage: (link: string) => any
+}
+
+function Hero({setActivePage}: appProps) {
   return (
     <div className="h-screen bg-hero">
       <div className="container px-6 py-20 mx-0">
@@ -44,6 +48,7 @@ function Hero() {
               id="dropdownMenuButton1"
               data-bs-toggle="dropdown"
               aria-expanded="false"
+              onClick={() => setActivePage('Challenge1')}
             >First Challenge</button>
               
             </div>

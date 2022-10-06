@@ -59,24 +59,26 @@ function Challenge1() {
               <br/>
               <pre>
                 <code>
-                  <span className="hljs-string">'0'</span> &lt;-&gt; <span className="hljs-string">'O'</span>     <span className="hljs-string">'5'</span> &lt;-&gt; <span className="hljs-string">'S'</span>
+                  <span className="">'0'</span> &lt;-&gt; <span className="">'O'</span>     <span className="">'5'</span> &lt;-&gt; <span className="">'S'</span>
                   <br/>
-                  <span className="hljs-string">'1'</span> &lt;-&gt; <span className="hljs-string">'I'</span>     <span className="hljs-string">'6'</span> &lt;-&gt; <span className="hljs-string">'G'</span>
+                  <span className="">'1'</span> &lt;-&gt; <span className="">'I'</span>     <span className="">'6'</span> &lt;-&gt; <span className="">'G'</span>
                   <br/>
-                  <span className="hljs-string">'2'</span> &lt;-&gt; <span className="hljs-string">'Z'</span>     <span className="hljs-string">'7'</span> &lt;-&gt; <span className="hljs-string">'L'</span>
+                  <span className="">'2'</span> &lt;-&gt; <span className="">'Z'</span>     <span className="">'7'</span> &lt;-&gt; <span className="">'L'</span>
                   <br/>
-                  <span className="hljs-string">'3'</span> &lt;-&gt; <span className="hljs-string">'E'</span>     <span className="hljs-string">'8'</span> &lt;-&gt; <span className="hljs-string">'B'</span>
+                  <span className="">'3'</span> &lt;-&gt; <span className="">'E'</span>     <span className="">'8'</span> &lt;-&gt; <span className="">'B'</span>
                   <br/>
-                  <span className="hljs-string">'4'</span> &lt;-&gt; <span className="hljs-string">'h'</span>     <span className="hljs-string">'9'</span> &lt;-&gt; <span className="hljs-string">'q'</span>
+                  <span className="">'4'</span> &lt;-&gt; <span className="">'h'</span>     <span className="">'9'</span> &lt;-&gt; <span className="">'q'</span>
                   <br/>
               </code></pre>
               <br/>
               <p>As an example, here is how a string looks before and after the characters are fixed:</p>
               <br/>
-              <pre><code><span className="hljs-string">"PR0-T1P #hqB: 1T'5 N1C3 T0 5AY H3770."</span> 
+              <pre><code><span className="">"PR0-T1P #hqB: 1T'5 N1C3 T0 5AY H3770."</span> 
               <br/>
+              <p className="flex flex-wrap">
               <span className="hljs-comment text-blue-700 font-bold">// implement fix function -&gt; </span>
-              <span className="hljs-string">"PRO-TIP #498: IT'S NICE TO SAY HELLO."</span>
+              <span className="">"PRO-TIP #498: IT'S NICE TO SAY HELLO."</span>
+              </p>
               <br/><br/>
               </code></pre><p><strong>Please create a function that will fix a given string of this mistake before incalculable damage can be done!</strong></p>
               <br/>
@@ -84,11 +86,6 @@ function Challenge1() {
           </div>
         </div>
       </div>
-
-
-
-
-     
       <form>
         <div className="form-group mb-6">
           <label htmlFor="exampleInputEmail1" className="form-label inline-block mb-2 text-gray-700">Encrypted message</label>
@@ -108,7 +105,6 @@ function Challenge1() {
             m-0
             focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             aria-describedby="emailHelp" value={input} onChange={handleChange} />
-          
         </div>
         <div className="form-group mb-6">
           <label className="form-label inline-block mb-2 text-gray-700">Output</label>
