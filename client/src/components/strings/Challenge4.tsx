@@ -1,36 +1,26 @@
 import React from "react";
 
-function Challenge3() {
+function Challenge4() {
   const [input, setInput] = React.useState<string>(
-    "AyouEcould!thinkKthisAisYhard_toYreadKbeforeYreplacingEthe_keyYcharacters"
+    "   The white space at the beginning of this string doesn't match the whitespace at the end. "
   );
-  const [keys, setKeys] = React.useState<string[]>([
-    "A",
-    "_",
-    "K",
-    "E",
-    "Y",
-    '!'
-  ]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
 
   const decode = (msg: string) => {
-    let regex = new RegExp(`[${keys.join('')}]`, 'g')
-    console.log(regex)
-    return msg.replace(regex,' ')
+
+    return msg.split('').reverse().join('')
   };
 
   return (
     <section className="flex justify-center w-screen">
       <div className="block p-6 rounded-lg shadow-2xl bg-white w-4/5 mt-20 border border-slate-300">
         <h2 className="text-center text-3xl text-blue-600 mb-5">
-          Challenge #3
+          Challenge #4
         </h2>
-        <p className="text-center text-2xl text-blue-600 mb-5">
-          The Key!
-        </p>
+        <p className="text-center text-2xl text-blue-600 mb-5">Side quest</p>
 
         <div className="accordion mb-5" id="accordionExample">
           <div className="accordion-item bg-white border border-gray-200">
@@ -67,24 +57,7 @@ function Challenge3() {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body py-4 px-5">
-                <p>
-                  This week our challenges all deal with Strings! As one of
-                  JavaScript's primitive data structures, Strings are critical
-                  to understand and manipulate. Feel free to use JavaScript's
-                  built-in{" "}
-                  <a
-                    target="_blank"
-                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_methods"
-                  >
-                    String methods
-                  </a>
-                  .
-                </p>
-                <br />
-                <h2 id="heading-the-challenge-day-3">
-                  🏆 The Challenge - Day 3
-                </h2>
-                <br />
+               
                 <p>
                   <strong>
                     This week we will be discovering hidden messages by
@@ -95,70 +68,75 @@ function Challenge3() {
                 </p>
                 <br />
                 <p>
-                  Yesterday you should have come up with a few specific
-                  characters that we'll need today. Let's refer to those as our
-                  key characters.
+                  Today's challenge is minor to give you all a bit of a break
+                  halfway through the challenge week, but there are a couple of
+                  side quests I'm going to throw out for those with extra time
+                  on their hands.
                 </p>
                 <br />
                 <p>
-                  We need to create a function that will{" "}
-                  <strong>
-                    replace any instances of any of the key characters in a
-                    given string with an empty space (' ')
-                  </strong>
-                  . See below for an example with an example set of key
-                  characters.{" "}
-                </p>
-                <br />
-                <p>
-                  <strong>
-                    Remember to keep your code somewhere safe, as you'll need it
-                    to decrypt this week's message!
-                  </strong>
+                  So far we've swapped out calculator characters, cleaned up
+                  after a cat and a preschooler, and placed some spaces. Today
+                  is simple! <strong>Given a string, reverse it.</strong> Any
+                  details like whitespace, letter casing, or punctuation should
+                  be preserved and flipped along with the rest of the string.
+                  For example:
                 </p>
                 <br />
                 <pre className="overflow-x-auto bg-slate-800 text-yellow-300 text-sm py-5 px-3">
                   <code>
-                    example key characters -&gt;{" "}
-                    <span className="">'A'</span>,
-                    <span className="">'_'</span>,
-                    <span className="">'K'</span>,
-                    <span className="">'E'</span>,
-                    <span className="">'Y'</span>,
-                    <span className="">'!'</span>
-                    <br /><br />
+                    <span >
+                      " The white space at the beginning of this string doesn't
+                      match the whitespace at the end. "
+                    </span>
+                    <span className="">// reverse it</span>
                     <span className="">
-                      'AyouEcould!thinkKthisAisYhard_toYreadKbeforeYreplacingEthe_keyYcharacters'
-                    </span>
-                    <br /><br />
-                    <span className="hljs-comment">
-                      // implement key replacement function
-                    </span>
-                    <br />
-                    <span className="className">
-                      ' you could think this is hard to read before replacing
-                      the key characters'
+                      " .dne eht ta ecapsetihw eht hctam t'nseod gnirts siht fo
+                      gninnigeb eht ta ecaps etihw ehT "
                     </span>
                   </code>
                 </pre>
                 <br />
+                <h3 id="heading-some-extra-work">🏅 Some extra work</h3>
+                <br />
                 <p>
-                  <em>
-                    You didn't think I'd just give you the key for the week and
-                    let you skip{" "}
-                    <a
-                      target="_blank"
-                      href="https://blog.barbaralaw.me/huntober-2022-day-1"
-                    >
-                      Day 2
-                    </a>
-                    , did you?
-                  </em>
+                  By now you should have written a function for each day so far.
+                  If not, go back and finish those up! Here are some things I'd
+                  suggest doing to build a deeper understanding of Strings and
+                  their manipulation:
                 </p>
                 <br />
-                <h2 id="heading-thank-you-for-playing-along">
-                  🕵️ Thank You for playing along!
-                </h2>
+                <ol>
+                  <li>
+                    Explain your functions. Practice talking through your code.
+                  </li>
+                  <br />
+                  <li>
+                    Check your function, parameter, and variable names. Good
+                    code should be clear to follow and should document itself.{" "}
+                  </li>
+                  <br />
+                  <li>
+                    Rewrite your functions, taking a different approach. If you
+                    used String methods, try looping, and vice versa. Solve the
+                    problem via an alternate route and look for pros and cons of
+                    each.
+                  </li>
+                  <br />
+                  <li>
+                    If you haven't yet, use the 4 functions you have so far (in
+                    order, Calculator fix -&gt; Use the Day 2 key to add spaces
+                    -&gt; Reverse the string), on our{" "}
+                    <a
+                      target="_blank"
+                      href="https://twitter.com/huntoberTweets/status/1576251846603071488?s=20&amp;t=7DbIxmHG-tlCU98q_0qLhg"
+                    >
+                      secret message
+                    </a>
+                    . Compare your answer so far with others!{" "}
+                  </li>
+                </ol>
+
                 <br />
               </div>
             </div>
@@ -225,4 +203,4 @@ function Challenge3() {
     </section>
   );
 }
-export default Challenge3;
+export default Challenge4;

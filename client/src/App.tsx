@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Challenge1 from './components/strings/Challenge1';
 import Challenge2 from './components/strings/Challenge2';
 import Challenge3 from './components/strings/Challenge3';
+import Challenge4 from './components/strings/Challenge4';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
     {activeChallenge === 'Challenge1' && <Challenge1 />}
     {activeChallenge === 'Challenge2' && <Challenge2 />}
     {activeChallenge === 'Challenge3' && <Challenge3 />}
+    {activeChallenge === 'Challenge4' && <Challenge4 />}
   </> 
   );
 }
