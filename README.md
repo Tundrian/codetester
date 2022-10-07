@@ -47,7 +47,7 @@
   <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
-
+<!--
 ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
 
 ## Key Features
@@ -140,4 +140,4 @@ MIT
 > [amitmerchant.com](https://www.amitmerchant.com) &nbsp;&middot;&nbsp;
 > GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
 > Twitter [@amit_merchant](https://twitter.com/amit_merchant)
-
+-->
