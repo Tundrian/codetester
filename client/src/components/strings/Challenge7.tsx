@@ -2,24 +2,17 @@ import React from "react";
 
 function Challenge7() {
   const [input, setInput] = React.useState<string>(
-    "Thies its H alltowe!en!? Th#is Tis GHalolowmeen$!"
+    "'vCZNKOV: 0 MFNYVI LI KFMXGFZGRLM XSZMTVH'"
   );
-
-  const [num, setNum] = React.useState<number>(4);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
 
-  const handleNumChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNum(+e.target.value);
-  };
-
   const decode = (msg: string) => {
-    return msg
-      .split("")
-      .filter((x, i) => (i + 1) % num !== 0)
-      .join("");
+    console.log('A'.charCodeAt(0), 'Z'.charCodeAt(0), 'a'.charCodeAt(0), 'z'.charCodeAt(0))
+
+    return msg.split('').map(x => !x.match(/[a-zA-Z]/i) ? x : x === x.toLowerCase() ? String.fromCharCode(90 - (x.charCodeAt(0) - 97)) : String.fromCharCode(122 - (x.charCodeAt(0) - 65))).join('')
   };
 
   return (
@@ -92,24 +85,37 @@ function Challenge7() {
                     <span className="hljs-comment">
                       // first letter of the alphabet, uppercase
                     </span>
+                    <br />
                     <span className="hljs-string">'z'</span>{" "}
+                    <br />
+                    <br />
                     <span className="hljs-comment">
                       // last letter of the alphabet, lowercase
                     </span>
+                    <br />
                     <span className="hljs-string">'p'</span>{" "}
+                    <br />
+                    <br />
                     <span className="hljs-comment">
                       // 16th letter of the alphabet, lowercase
                     </span>
+                    <br />
                     <span className="hljs-string">'K'</span>{" "}
+                    <br />
+                    <br />
                     <span className="hljs-comment">
                       // 16th letter from *end* of alphabet, uppercase
                     </span>
+                    <br />
                     <span className="hljs-string">
                       'vCZNKOV: 0 MFNYVI LI KFMXGFZGRLM XSZMTVH'
                     </span>
+                    <br />
+                    <br />
                     <span className="hljs-comment">
                       // function replaces letters with opposites
                     </span>
+                    <br />
                     <span className="hljs-string">
                       'Example: 0 number or punctuation changes'
                     </span>
@@ -264,35 +270,7 @@ function Challenge7() {
               value={input}
               onChange={handleChange}
             />
-            <label
-              htmlFor="numberInput"
-              className="form-label inline-block mb-2 text-gray-700"
-            >
-              Input Number
-            </label>
-            <input
-              name="numberInput"
-              id="numberInput"
-              type="number"
-              className="form-control
-          block
-          w-full
-          px-3
-          py-1.5
-          text-base
-          font-normal
-          text-gray-700
-          bg-gray-200 bg-clip-padding
-          border border-solid border-gray-300
-          rounded
-          transition
-          ease-in-out
-          m-0
-          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              aria-describedby="emailHelp"
-              value={num}
-              onChange={handleNumChange}
-            />
+
           </div>
           <div className="form-group mb-6">
             <label className="form-label inline-block mb-2 text-gray-700">

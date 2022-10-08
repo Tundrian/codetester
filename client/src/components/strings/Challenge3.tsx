@@ -4,20 +4,18 @@ function Challenge3() {
   const [input, setInput] = React.useState<string>(
     "AyouEcould!thinkKthisAisYhard_toYreadKbeforeYreplacingEthe_keyYcharacters"
   );
-  const [keys, setKeys] = React.useState<string[]>([
-    "A",
-    "_",
-    "K",
-    "E",
-    "Y",
-    '!'
-  ]);
+  const [keys, setKeys] = React.useState<string>("A_KEY!");
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
 
+  const handleKeyChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setKeys(e.target.value)
+  }
+
   const decode = (msg: string) => {
-    let regex = new RegExp(`[${keys.join('')}]`, 'g')
+    let key = keys.split('')
+    let regex = new RegExp(`[${key.join('')}]`, 'g')
     console.log(regex)
     return msg.replace(regex,' ')
   };
@@ -166,6 +164,33 @@ function Challenge3() {
         </div>
         <form>
           <div className="form-group mb-6">
+          <label
+              htmlFor="keyInput"
+              className="form-label inline-block mb-2 text-gray-700"
+            >Key</label>
+            <input
+              name="keyInput"
+              id="keyInput"
+              type="textarea"
+              className="form-control
+          block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-gray-200 bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              aria-describedby="emailHelp"
+              value={keys}
+              onChange={handleKeyChange}
+            />
             <label
               htmlFor="exampleInputEmail1"
               className="form-label inline-block mb-2 text-gray-700"
