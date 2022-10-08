@@ -11,7 +11,7 @@ function Hero({setActivePage}: appProps) {
             <div className="mb-6 lg:mb-0">
               <h2 className="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight">
                 Ready to start <br />
-                <span className="text-blue-600">Barabara's Blog Challenges?</span>
+                <a href="https://blog.barbaralaw.me/" target="_blank"><span className="text-blue-600">Barabara's Blog Challenges?</span></a>
               </h2>
             </div>
             <div className="mb-6 lg:mb-0">
