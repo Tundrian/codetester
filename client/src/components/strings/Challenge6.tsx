@@ -5,18 +5,21 @@ function Challenge6() {
     "Thies its H alltowe!en!? Th#is Tis GHalolowmeen$!"
   );
 
-  const [num, setNum] = React.useState<number>(4)
+  const [num, setNum] = React.useState<number>(4);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
 
   const handleNumChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNum(+e.target.value)
-  }
+    setNum(+e.target.value);
+  };
 
   const decode = (msg: string) => {
-    return msg.split('').filter((x,i) => (i + 1) % num !== 0 ).join('');
+    return msg
+      .split("")
+      .filter((x, i) => (i + 1) % num !== 0)
+      .join("");
   };
 
   return (
@@ -26,7 +29,7 @@ function Challenge6() {
           Challenge #6
         </h2>
         <p className="text-center text-2xl text-blue-600 mb-5">
-        Start Putting it Together
+          Start Putting it Together
         </p>
 
         <div className="accordion mb-5" id="accordionExample">
@@ -65,188 +68,114 @@ function Challenge6() {
             >
               <div className="accordion-body py-4 px-5">
                 <p>
-                  So, I may have bitten off a bit more than I can chew this
-                  week. Will you help me out?{" "}
+                  Thanks for all your help yesterday, you guys are cool cats!
+                  Today's challenge will have you removing decoy characters from
+                  a string.
                 </p>
                 <br />
                 <p>
-                  My friend has invented a 'Best Cat-Themed Pun of a TV Show
-                  Title Ever' award and I promised I'd help her with the
-                  submissions. The problem is, I didn't realize just how much
-                  help she would need whittling down the submissions to the
-                  finalists. Between work, family, and Huntober, I just don't
-                  have time to get the final list over to her. Can you help?
+                  <strong>
+                    Write a function that, when given a non-empty string, and
+                    positive integer X, removes every Xth character from the
+                    string
+                  </strong>
+                  . Counting should begin from the first element in the string
+                  and should continue in that pattern until the end of the
+                  string.{" "}
                 </p>
                 <br />
 
-                <p>Here is a comma-separated list of the submissions:</p>
+                <p>For example:</p>
                 <br />
 
-                <pre className="overflow-x-auto bg-slate-800 text-yellow-300 text-sm py-5 px-3">
+                <pre  className="overflow-x-auto bg-slate-800 text-yellow-300 text-sm py-5 px-3">
                   <code>
-                    <span>
-                      "The Pawshank Redemption,Caturday Night Live,Only
-                      Meworders in the Building,I Love Mewcy, Mewsummer
-                      Meowders,The Golden Purrs, Purrlandia ,Meowpardy,
-                      Meowstery Science Theater: Purrthousand, Amewican Idol,Dog
-                      City,Doctor Mew , The Meowing Fed,Mew Peter,The Vicar of
-                      Dogley, Kittens,Meownton Abbey,Pets and the Kitty,Dogis
-                      and Bonehead,Pawlty Meowers ,The Meowpet Show,Barkos,The
-                      Catbert Purrport,The Pawffice,The Dogford Files,
-                      Battlestar Catlactica,Catlumbo,SpongeDog Squarepants,NYPD
-                      Mew ,Fluffy the Meowpire Purrer,The Inbemewners,Meowder
-                      She Wrote,Paw &amp; Order,30 Dog, Pawvatar: The Last
-                      Meowbender,The Pawnight Show,Arrested
-                      Dogvelopment,Furiends,Mewie,Curb Your Dogthusiasm,Teenage
-                      Mewtant Ninja Turtles,Phineas and Purrb,Paw Trek, Paw
-                      Trek: The Next Mewination, Twin Mewks, *C*A*T*S*,DogTales,
-                      Game of Bones, House of the Meowgon,The Purrlight
-                      Zone,Breaking Bone,The Meowre,The Dogpranos,The Rings of
-                      Meower, The KIT Crowd,Strangepaw Things ,Catman: The
-                      Animeowted Series,Meowter Call Saul,Mewgerton
-                      ,Obark,Mewphoria,La Casa de Pawpel,Rick &amp;
-                      Meowty,Amewican Purror Story,
-                      Mewcifer,PawndaVision,Dogxter,The Meowndalorian, Dog
-                      Lasso,Bark,Meowdern Pawmily , Meowtlander,Bone
-                      Mirror,Barks and Recreation,How to Get Away with
-                      Meowder,Boneland ,Meowther Ted,Mewtopia,Mewey,The Mewkie
-                      Meowse Doghouse,Mewster Rogers' Neighborhood"
+                    <span className="hljs-comment">
+                      // For the string below and 4
+                    </span>
+                    <span className="hljs-string">
+                      "Thies its H alltowe!en!? Th#is Tis GHalolowmeen$!"
+                    </span>
+                    <span className="hljs-comment">// remove decoy strings</span>
+                    <span className="hljs-string">
+                      "This is Halloween! This is Halloween!"
+                    </span>
+
+                    <span className="hljs-comment">
+                      // For the string below and 5
+                    </span>
+                    <span className="hljs-string">
+                      "The LBachyelor^ is ma tehrrib le tpelev!isioOn sh8ow."
+                    </span>
+                    <span className="hljs-comment">
+                      // remove decoy strings and preach 🙌
+                    </span>
+                    <span className="hljs-string">
+                      "The Bachelor is a terrible television show."
+                    </span>
+                  </code>
+                </pre>
+                <br />
+
+                <h2 id="heading-start-putting-it-together">
+                  🧩 Start Putting it Together
+                </h2>
+                <br />
+
+                <p>
+                  Tomorrow is day 7 of 7, and you'll be receiving a final
+                  function assignment as well as the task of putting all of your
+                  other functions from the week together in sequence.
+                </p>
+                <br />
+
+                <p>
+                  If you like, you can get started on piecing together your
+                  functions today. Please remember that the functions must be
+                  performed on the provided string <strong>in order</strong>. If
+                  you do things out of order it will get messy very fast.
+                </p>
+                <br />
+
+                <p>
+                  It is totally up to you how you want to organize your code.
+                  Some may choose to create a master decoding function that
+                  calls each helper function as needed, while others may prefer
+                  to chain the function calls separately. Up to you.
+                </p>
+                <br />
+
+                <p>
+                  <em>
+                    Note: Day 2 and Day 5 were side-projects, and their real
+                    purpose was to provide you with inputs for this final
+                    decoding. Day 2's key characters and Day 5's final count
+                    will be used as arguments for Day 3 and Day 6's functions,
+                    respectively.
+                  </em>
+                </p>
+                <br />
+
+                <p>Here's the encrypted string for the week, enjoy!</p>
+                <br />
+
+                <pre  className="overflow-x-auto bg-slate-800 text-yellow-300 text-sm py-5 px-3">
+                  <code>
+                    <span className="hljs-keyword">const</span> encryptedMsg ={" "}
+                    <span className="hljs-string">
+                      "e!!Igv)t5lltBcvbdeDH3dVw!OOtI#Aa.ZMDu7WYpP^VVjDc4I50iv#ylhgmQfs"
                     </span>
                   </code>
                 </pre>
                 <br />
 
                 <p>
-                  There are some very strict rules that the pun submissions had
-                  to follow. I need to know which of these cat puns made the
-                  cut. I promise tomorrow we'll get back to decoding our secret
-                  message, and coincidentally, I'm pretty sure{" "}
                   <strong>
-                    the number of these puns that met the criteria
-                  </strong>{" "}
-                  will match a key sequence value we'll need tomorrow. Isn't
-                  that lucky?
-                </p>
-                <br />
-
-                <h5 id="heading-here-are-the-rules-these-submissions-had-to-follow">
-                  Here are the rules these submissions had to follow:
-                </h5>
-                <br />
-
-                <ul>
-                  <li>
-                    No empty spaces at the start or end of the submission{" "}
-                    <em>
-                      (my friend can't stand when people don't follow
-                      directions)
-                    </em>
-                  </li>
-                  <br />
-
-                  <li>
-                    Cannot contain 'dog', 'bark', or 'bone' in any combination
-                    of upper or lower case{" "}
-                    <em>(canine trolling can't be stopped)</em>
-                  </li>
-                  <br />
-
-                  <li>
-                    Total length of pun cannot be a multiple of 5{" "}
-                    <em>(this includes spaces and punctuation)</em>
-                  </li>
-                  <br />
-
-                  <li>
-                    The sum of the charCodes of the 1st and last characters must
-                    be odd{" "}
-                    <em>
-                      (my friend's a bit of a character, but she's great once
-                      you get to know her)
-                    </em>
-                  </li>
-                  <br />
-
-                  <li>
-                    Character directly after the middle of the string may not be
-                    'e'{" "}
-                    <em>
-                      (For example the character to check in even-length string{" "}
-                      <code>center</code> is <code>t</code>, for odd an example
-                      would be <code>weird</code> -&gt; 'r')
-                    </em>
-                  </li>
-                  <br />
-
-                  <li>
-                    Must have an even number of lowercase letters (do not count
-                    punctuation or spaces as letters)
-                  </li>
-                  <br />
-
-                  <li>
-                    Must have at least 2 capital letters{" "}
-                    <em>
-                      (honestly, I'm a little worried these requirements are too
-                      strict)
-                    </em>
-                  </li>
-                  <br />
-
-                  <li>
-                    Must not contain a capital 'S'{" "}
-                    <em>
-                      (definitely too strict. What does S even have to do with
-                      cat puns?)
-                    </em>
-                  </li>
-                </ul>
-                <br />
-
-                <p>
-                  Send me a DM of the puns that made the cut{" "}
-                  <a target="_blank" href="https://twitter.com/huntoberTweets">
-                    on Twitter
-                  </a>
-                  , and go ahead and save the final count to use tomorrow.
-                  Thanks!
-                </p>
-                <br />
-
-                <h3 id="heading-it-still-looks-like-gibberish">
-                  🕵️ It still looks like Gibberish
-                </h3>
-                <br />
-
-                <p>
-                  If you've started trying to decode this week's message you may
-                  be wondering if you're on the right track. Chances are if it
-                  still looks like someone mashed the keyboard, you're doing
-                  A-OK! Feel free to compare notes!
-                </p>
-                <br />
-
-                <div className="embed-wrapper">
-                  <div className="embed-loading">
-                    <div className="loadingRow"></div>
-                    <div className="loadingRow"></div>
-                  </div>
-                  <a
-                    className="embed-card"
-                    href="https://twitter.com/wo1vin/status/1577413631691853824"
-                  >
-                    https://twitter.com/wo1vin/status/1577413631691853824
-                  </a>
-                </div>
-                <br />
-
-                <p>
-                  <strong>
-                    Anyone want to hazard a guess at what the final message will
-                    be?
+                    Do any of you have any guesses about what the message could
+                    be? I think it'll stay unsolved until tomorrow, but who
+                    knows?
                   </strong>
                 </p>
-
                 <br />
               </div>
             </div>

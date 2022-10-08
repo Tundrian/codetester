@@ -14,6 +14,7 @@ function Navbar({activePage, setActivePage}: appProps, ) {
       'Challenge4',
       'Challenge5',
       'Challenge6',
+      'Challenge7',
     ]
   }
   return (

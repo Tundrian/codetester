@@ -8,6 +8,7 @@ import Challenge3 from './components/strings/Challenge3';
 import Challenge4 from './components/strings/Challenge4';
 import Challenge5 from './components/strings/Challenge5';
 import Challenge6 from './components/strings/Challenge6';
+import Challenge7 from './components/strings/Challenge7';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
     {activeChallenge === 'Challenge4' && <Challenge4 />}
     {activeChallenge === 'Challenge5' && <Challenge5 />}
     {activeChallenge === 'Challenge6' && <Challenge6 />}
+    {activeChallenge === 'Challenge7' && <Challenge7 />}
   </> 
   );
 }
